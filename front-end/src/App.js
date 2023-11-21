@@ -32,6 +32,10 @@ function App() {
         console.log(data);
       });
 
+      socket.on('connect', function () {
+        socket.emit('get_time');
+      });
+
       setLoading(false);
 
       socket.on("disconnect", (data) => {
