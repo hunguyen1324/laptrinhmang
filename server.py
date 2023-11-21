@@ -114,11 +114,19 @@ def handle_message(data):
 def logout():
     for username, sid in logged_in_users.items():
         if sid == request.sid:
+            # Remove user from logged_in_users
             del logged_in_users[username]
+            # Remove user from room_user_map and leave the room
+            room = room_user_map.pop(sid, None)
+            if room:
+                leave_room(room)
             emit('logout_status', {'status': 'success',
                  'message': 'Logged out successfully'})
-            break
-
+            print("User logged out")
+            return
+    emit('logout_status', {'status': 'failure', 
+            'message': 'Not logged in'})
+    print("User not logged in")
 
 @socketio.on("disconnect")
 def disconnected():

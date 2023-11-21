@@ -1,6 +1,6 @@
 import "./App.css";
 import HttpCall from "./components/HttpCall";
-import WebSocketCall from "./components/WebSocketCall";
+import RouteApp from "./components/RouteApp";
 import { io } from "socket.io-client";
 import { useEffect, useState } from "react";
 
@@ -60,7 +60,7 @@ function App() {
         <>
           <button onClick={handleClick}>turn chat off</button>
           <div className="line">
-            {!loading && <WebSocketCall socket={socketInstance} />}
+            {!loading && <RouteApp socket={socketInstance} />}
           </div>
         </>
       )}
