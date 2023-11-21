@@ -23,22 +23,23 @@ After installation please follow the instructions below to download the repo.
 - Run the following command:
 
 ```bash
-  git clone https://github.com/adrianhuber17/webSocket-App.git
+  git clone ...
 ```
 
 - Navigate into the new sub-folder created called **WebSocket-App**.
 - Run the following commands to create an environment and install the dependencies:
 
 ```bash
-  python3 -m venv env
+  virtualenv env
   source env/bin/activate
   pip install -r requirements.txt
 ```
 
 - Navigate into the /**front-end** folder and run the following command:
+- Should open new terminal 
 
 ```bash
-  npm i react-scripts
+  npm i
 ```
 
 ## Run Locally
@@ -50,19 +51,20 @@ Make sure the server is initialized before the client to avoid any issues.
 Terminal **window 1** - start the server:
 
 ```bash
-  cd webSocket-App
   source env/bin/activate
-  python3 server.py
+  python server.py
 ```
 
 Terminal **window 2** - start the client:
 
 ```bash
-  cd webSocket-App/front-end
+  cd front-end
   npm start
 ```
 
 ## Demo
+
+Note: old demo, only chat App not have room, login, logout, register
 
 The browser on the left is Google Chrome and the Browser on the right is Firefox.
 The demo below displays in **red** a simple fetch to the server that executes on the rendering of the page using an http call.
